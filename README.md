@@ -36,7 +36,7 @@ O próprio Facebook define o React como sendo "uma biblioteca declarativa, efici
 
 O React se baseia na ideia de criarmos componentes que podem ser reutilizados em toda a aplicação e até em outras aplicações.
 
-magine criar um componente que contenha todo o código necessário para exibir esse elemento e, quando quisermos utilizá-lo, bastaria chamá-lo por uma tag criada por nós mesmos como "<Curso />". Assim, fica fácil reutilizá-lo onde quisermos, além da nossa View ficar mais limpa, ao invés de termos várias <div> para todos os lados.
+Imagine criar um componente que contenha todo o código necessário para exibir esse elemento e, quando quisermos utilizá-lo, bastaria chamá-lo por uma tag criada por nós mesmos como ```<Curso />```. Assim, fica fácil reutilizá-lo onde quisermos, além da nossa View ficar mais limpa, ao invés de termos várias ```<div>``` para todos os lados.
 
 O React tem boa performance, pois evita acessar diretamente o DOM (já vamos entender isso).
 
@@ -48,4 +48,18 @@ Isso pode até parecer ruim, mas na verdade nos dá flexibilidade para integrar 
 
 Várias startups e gigantes do mundo todo usam React, pois sua versatilidade está revolucionando o modo como criamos nossas aplicações tanto web quanto mobile.
 
-Isso mesmo! Com o React, também podemos desenvolver aplicações nativas para dispositivos móveis, como é o caso do Instagram. 
+Isso mesmo! Com o React, também podemos desenvolver aplicações nativas para dispositivos móveis, como é o caso do Instagram.
+
+## O que é DOM e Virtual DOM?
+
+O DOM (*Document Object Model*) é uma interface gerida pelos navegadores entre o HTML e o JavaScript. Quando você manipula um elemento HTML através de código JavaScript, ele acessa esse elemento justamente através do DOM. É como se cada nó do DOM apontasse para o seu respectivo elemento HTML e o JavaScript, para eliminar a necessidade de conversão do HTML toda hora em que for necessária a manipulação de HTML, o representasse através dessa estrutura virtual.
+
+Repare no exemplo abaixo. Na ilustração, nós temos uma representação básica do que seria uma árvore DOM montada por um navegador qualquer.
+
+![Árvore DOM](images/DOM_tree.png)
+
+Sendo assim, toda vez que um código JavaScript precisar acessar um elemento HTML, quer seja para realizar uma modificação ou mesmo para verificar como está o estado atual do elemento, ele "navega" através da árvore DOM para encontrar o elemento e, após encontrá-lo, consegue identificar sua correspondência dentro do HTML.
+
+Se quisermos deixar o HTML dinâmico, teremos que utilizar a árvore DOM para realizar as modificações necessárias nos elementos HTML. O problema é que o acesso e navegação dentro do DOM é muito lenta.
+
+Para melhorar esse aspecto, o React mantém uma cópia do DOM em memória, chamada de Virtual DOM. Quando algum dado é alterado e é necessária uma modificação na View (ou seja, no seu HTML), o React verifica pelo Virtual DOM quais as partes que devem ser alteradas. Com isso, ele acessa o DOM o menor número possível de vezes, alterando unicamente onde é necessário. Isso garante uma ótima velocidade às aplicações que utilizam a estratégia do Virtual DOM, como React e Vue.js. 
