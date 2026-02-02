@@ -1,6 +1,6 @@
-#Fundamentos do React
+# Fundamentos do React
 
-##A web pré e pós componentes
+## A web pré e pós componentes
 No começo, a web era apenas para compartilhar documentos, assim como os documentos do Word. Tanto que HTML significa "Linguagem de Marcação de HiperTexto".
 
 As tags nos ajudavam a deixar parte do texto em negrito, declarar títulos, criar listas e tudo mais que se pode precisar em um texto. 
@@ -27,7 +27,7 @@ Até que alguns frameworks começaram com a ideia de reaproveitamento de HTML. M
 
 Com o React, podemos facilmente criar nossos próprios elementos e chamá-los quando quisermos, como se eles fossem tags do HTML. Desde então, começamos a pensar no desenvolvimento web baseado em componentes, que já é um conceito bem conhecido no desenvolvimento Desktop.
 
-##O que é React?
+## O que é React?
 O React é uma biblioteca desenvolvida pelo time do Facebook com o intuito de se aplicar o conceito de componentização durante o desenvolvimento de uma aplicação web. Isso quer dizer que, com o auxílio do React e do JavaScript, você poderá desenvolver componentes reutilizáveis na interface de sua aplicação web. Isso certamente acelera e facilita o trabalho que o desenvolvedor normalmente teria ao desenvolver a interface da aplicação web. 
 
 Essa ideia de componentização na verdade não é nova. Ela já era usada há muitos anos no desenvolvimento de aplicações Desktop. Porém, no começo da Internet, o desenvolvimento web era totalmente voltado a sites simples, criados para exibir informações estáticas. 
@@ -42,4 +42,10 @@ O React tem boa performance, pois evita acessar diretamente o DOM (já vamos ent
 
 Como o objetivo do React é focar na criação de componentes, muitas funcionalidades ficam por conta dos desenvolvedores, como requisições, roteamento, internacionalização, etc.
 
- Isso pode até parecer ruim, mas na verdade nos dá flexibilidade para integrar com qualquer biblioteca que quisermos.
+Isso pode até parecer ruim, mas na verdade nos dá flexibilidade para integrar com qualquer biblioteca que quisermos.
+
+## Quem usa React?
+
+Várias startups e gigantes do mundo todo usam React, pois sua versatilidade está revolucionando o modo como criamos nossas aplicações tanto web quanto mobile.
+
+Isso mesmo! Com o React, também podemos desenvolver aplicações nativas para dispositivos móveis, como é o caso do Instagram. 
