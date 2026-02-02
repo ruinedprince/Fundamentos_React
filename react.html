@@ -9,11 +9,21 @@
     <div id="app"></div>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
         const minhaDiv = document.querySelector('#app');
-        ReactDOM.render(React.createElement('h1', null, 
-            React.createElement('span', null, 'TreinaWeb')
+        ReactDOM.render(
+            React.createElement('h1', { id: 'title' }, // Passando o id 'title' para o elemento h1 (versão sem JSX)
+                React.createElement('span', null, 'TreinaWeb')
         ), minhaDiv); // Renderiza o elemento React na div com id 'app'. Inviável em um ambiente de produção comum devido complexidade do código e baixa performance.
+    
+        // Versão com JSX
+        ReactDOM.render(
+            <h1 id="title" className="title" onClick={example}>
+                <span>TreinaWeb</span>
+            </h1>,
+            minhaDiv
+        );
     </script>
     
 </body>
