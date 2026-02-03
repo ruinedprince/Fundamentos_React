@@ -1,0 +1,12 @@
+.input {
+    font-size: 18px;
+    border: 1px solid var(--border);
+    width: 100%;
+    border-radius: 3px;
+    padding: 4px;
+    resize: vertical; /* O resize vertical é o que permite que o usuário redimensione o textarea somente verticalmente. É um atributo que controla a capacidade de redimensionamento do textarea. */
+}
+
+.input:focus {
+    outline: none;
+}

@@ -1,0 +1,20 @@
+// CSS GERAL
+
+body {
+    margin: 0;
+    font-family: roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-width: 320px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #007bff;
+    --primary-light: #66a1ff;
+    --primary-text: #1e1e1e;
+    --second-text: #6c757d;
+    --border: #dee2e6;
+}
