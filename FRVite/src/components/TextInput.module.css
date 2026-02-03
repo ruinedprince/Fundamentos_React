@@ -1,6 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .input {
     font-size: 18px;
     border: 1px solid var(--border);
+    min-height: 100px;
     width: 100%;
     border-radius: 3px;
     padding: 4px;
