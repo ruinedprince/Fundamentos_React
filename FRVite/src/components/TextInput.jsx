@@ -1,4 +1,5 @@
 import styles from './TextInput.module.css';
+import { useState } from 'react';
 
 // Props são objetos que contêm as propriedades do componente. São passados como argumentos para o componente. Podemos acessar as propriedades do componente através do objeto props.
 
@@ -6,8 +7,14 @@ export default function TextInput({placeholder = "Valor padrão", maxLength, cla
 
     // Como eu ja sei que vou receber as propriedades placeholder e maxLength, posso desestruturar o objeto props e receber as propriedades que eu quero. Se não receber, o valor padrão será "Valor padrão".
 
-    const [contador, setContador] = useState(0);
+    const [text, setText] = useState('');
     
+    function onTextChange(event) {
+        const text = event.target.value;
+        if (text.length <= maxLength) {
+            setText(text);
+        }
+    }
 
     return (
         <div className={`${styles.container} ${className || ''}`}>
@@ -16,8 +23,15 @@ export default function TextInput({placeholder = "Valor padrão", maxLength, cla
             */}
             {/* Como eu quero que o textarea tenha a classe input, posso usar o className={styles.input} para aplicar a classe input. Eu não posso usar apena "class" pois isso é uma palavra reservada do JavaScript.*/}
 
-            <textarea className={styles.input} placeholder={placeholder} maxLength={maxLength} {...props}/>
-            <p>{contador}/{limiteContador}</p>
+            <textarea
+                className={styles.input}
+                placeholder={placeholder}
+                onChange={onTextChange}
+                maxLength={maxLength}
+                value={text}
+                {...props}
+            />
+            <p>{text.length}/{maxLength}</p>
         </div>
     )
 }
