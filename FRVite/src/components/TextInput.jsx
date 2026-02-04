@@ -1,20 +1,14 @@
 import styles from './TextInput.module.css';
-import { useState, useRef } from 'react';
-
 // Props são objetos que contêm as propriedades do componente. São passados como argumentos para o componente. Podemos acessar as propriedades do componente através do objeto props.
 
 export default function TextInput(props) {
+
     // Podemos desestruturar className (e outras props) agora para evitar o erro ReferenceError.
+    
     const { className = '', ...rest } = props;
 
     // const inputElement = useRef();
 
-    const [tweetList, setTweetList] = useState([]);
-
-    function sendTweet() {
-        setTweetList([text, ...tweetList]); // Adiciona o texto ao início do array de tweets.
-        setText(''); // Limpa o campo de texto.
-    }
 
     // if (inputElement.current) { // Verifica se o elemento existe antes de acessar sua propriedade defaultValue.
     //     console.log(inputElement.current.defaultValue);
@@ -30,15 +24,6 @@ export default function TextInput(props) {
                 className={styles.input}
                 {...rest}
             />
-
-            {/*
-            {text.length <= maxLength && (
-                <button onClick={sendTweet}>Enviar</button>
-            )}
-            {tweetList.map((tweet) => {
-                return <p key={tweet}>{tweet}</p>
-            })}
-            */}
             
         </div>
     )

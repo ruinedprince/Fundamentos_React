@@ -4,6 +4,12 @@ import { useState } from 'react';
 export default function Index() {
     const [text, setText] = useState('');
     const maxLength = 125;
+    const [tweetList, setTweetList] = useState([]);
+
+    function sendTweet() {
+        setTweetList([text, ...tweetList]); // Adiciona o texto ao início do array de tweets.
+        setText(''); // Limpa o campo de texto.
+    }
 
     function onTextChange(event) {
         const text = event.target.value;
@@ -26,12 +32,12 @@ export default function Index() {
             </div>
             <div>
                 <div>{text.length}/{maxLength}</div>
-                <button>Tweetar</button>
+                <button onClick={sendTweet}>Enviar</button>
             </div>
             <ul>
-                <li>Tweet 1</li>
-                <li>Tweet 2</li>
-                <li>Tweet 3</li>
+                {tweetList.map((tweet) => {
+                    return <li key={tweet}>{tweet}</li>
+                })}
             </ul>
         </div>
     )
