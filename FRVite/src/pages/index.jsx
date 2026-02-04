@@ -1,5 +1,6 @@
 import TextInput from '../components/TextInput'
 import { useState } from 'react';
+import Tweet from '../components/Tweet';
 
 export default function Index() {
     const [text, setText] = useState('');
@@ -23,7 +24,7 @@ export default function Index() {
             <h1>TreinaTweet</h1>
             <div>
                 <img src="https://github.com/ruinedprince.png" alt="Foto de perfil do usuário" />
-                <TextInput 
+                <TextInput
                     placeholder={"O que está acontecendo?"}
                     onChange={onTextChange}
                     value={text}
@@ -35,8 +36,10 @@ export default function Index() {
                 <button onClick={sendTweet}>Enviar</button>
             </div>
             <ul>
-                {tweetList.map((tweet) => {
-                    return <li key={tweet}>{tweet}</li>
+                {tweetList.map(tweet => {
+                    return (
+                        <li><Tweet children={tweet} /></li>
+                    )
                 })}
             </ul>
         </div>
