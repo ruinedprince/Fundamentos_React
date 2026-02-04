@@ -8,7 +8,7 @@ export default function TextInput({placeholder = "Valor padrão", maxLength, cla
     // Como eu ja sei que vou receber as propriedades placeholder e maxLength, posso desestruturar o objeto props e receber as propriedades que eu quero. Se não receber, o valor padrão será "Valor padrão".
 
     const [text, setText] = useState('');
-    const inputElement = useRef();
+    // const inputElement = useRef();
 
     function onTextChange(event) {
         const text = event.target.value;
@@ -17,9 +17,9 @@ export default function TextInput({placeholder = "Valor padrão", maxLength, cla
         }
     }
 
-    if (inputElement.current) { // Verifica se o elemento existe antes de acessar sua propriedade defaultValue.
-        console.log(inputElement.current.defaultValue);
-    }
+    // if (inputElement.current) { // Verifica se o elemento existe antes de acessar sua propriedade defaultValue.
+    //     console.log(inputElement.current.defaultValue);
+    // }
 
     return (
         <div className={`${styles.container} ${className || ''}`}>
@@ -29,15 +29,17 @@ export default function TextInput({placeholder = "Valor padrão", maxLength, cla
             {/* Como eu quero que o textarea tenha a classe input, posso usar o className={styles.input} para aplicar a classe input. Eu não posso usar apena "class" pois isso é uma palavra reservada do JavaScript.*/}
 
             <textarea
-                ref={inputElement}
+                // ref={inputElement}
                 className={styles.input}
                 placeholder={placeholder}
                 onChange={onTextChange}
                 maxLength={maxLength}
-                defaultValue={10} // Valor padrão do textarea. O contador de caracteres não será atualizado pois o valor é fixo. Para contornar isso, usamos o useRef para referenciar o textarea e atualizar o valor do textarea.
+                value={text}
+                // defaultValue={10} // Valor padrão do textarea. O contador de caracteres não será atualizado pois o valor é fixo. Para contornar isso, usamos o useRef para referenciar o textarea e atualizar o valor do textarea.
                 {...props}
             />
             <p>{text.length}/{maxLength}</p>
+            <button>Enviar</button>
         </div>
     )
 }
